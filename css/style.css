@@ -22,3 +22,25 @@ body {
     background-image: url(../img/mine.jpg);
     height: 90%;
 }
+
+.iconBell {
+    padding: 20px;
+    background-color: white;
+    border-radius: 50%;
+    color: #8edafc;
+    font-size: 20px;
+}
+
+.boxMessage {
+    background-color: #8edafc;
+    color: black;
+}
+
+.messageSent {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.messageReceived {
+    
+}
