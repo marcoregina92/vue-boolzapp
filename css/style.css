@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: teal;
+    font-family: sans-serif;
+}
+
+.debugImg {
+    width: 50px;
+    border-radius: 50%;
+} 
+
+.container {
+    background-color: #eaeaea;
+}
+
+.backgroundMine {
+    background-image: url(../img/mine.jpg);
+    height: 90%;
+}
