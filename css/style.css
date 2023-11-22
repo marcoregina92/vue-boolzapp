@@ -36,19 +36,28 @@ body {
     color: black;
 }
 
+.message {
+    width: 217px;
+    position: relative;
+    padding: 7px 5px;
+    border-radius: 10px;
+    margin-bottom: 3px;
+}
+
 .messageSent {
-    display: flex;
-    flex-direction: row-reverse;
+    background-color: #d5f9ba;
+    left: 600px;
 }
 
 .messageReceived {
-  flex-direction: row;  
+  background-color: white;
 }
 
 .selectChat {
-    background-color: gray;
+    background-color: #e9ebeb;
 }
 
 .cursor-pointer{
     cursor: pointer;
 }
+
