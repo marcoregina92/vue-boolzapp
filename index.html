@@ -16,18 +16,18 @@
 <body>
 
     <div id="app" class="container">
-        <div class="row">
+        <div class="row mt-5">
             <div class="col-4 mt-2 d-flex align-items-center justify-content-between">
 
                 <div class="d-flex align-items-center">
-                    <img class="debugImg" src="./img/avatar_io.jpg" alt="">
-                    <span> Sofia </span>
+                    <img class="debugImg" src="./img/avatar_5.jpg" alt="">
+                    <span class="nameListChat mx-2"> Marco </span>
                 </div>
 
                 <div>
-                    <span class="p-1"><i class="fa-solid fa-circle-notch"></i></span>
-                    <span class="p-1"><i class="fa-solid fa-message"></i></span>
-                    <span class="p-1"><i class="fa-solid fa-ellipsis-vertical"></i></span>
+                    <span class="px-2 text-secondary"><i class="fa-solid fa-circle-notch"></i></span>
+                    <span class="px-2 text-secondary"><i class="fa-solid fa-message"></i></span>
+                    <span class="px-2 text-secondary"><i class="fa-solid fa-ellipsis-vertical"></i></span>
                 </div>
             </div>
             <div class="col-8 mt-2 d-flex align-items-center justify-content-between">
@@ -35,26 +35,26 @@
                 <div class="d-flex align-items-center ">
                     <img class="debugImg" :src="contacts[counter].avatar" alt="">
                     <div class="d-flex flex-column">
-                        <span> {{contacts[counter].name}} </span>
-                        <span>Ultimo accesso oggi {{contacts[counter].messages[1].date}} </span>
+                        <span class="nameListChat mx-2"> {{contacts[counter].name}} </span>
+                        <span class="lastSending mx-2">Ultimo accesso oggi {{contacts[counter].messages[1].date}} </span>
                     </div>
                 </div>
 
                 <div>
-                    <span class="p-1"><i class="fa-solid fa-magnifying-glass"></i></span>
-                    <span class="p-1"><i class="fa-solid fa-paperclip"></i></span>
-                    <span class="p-1"><i class="fa-solid fa-ellipsis-vertical"></i></span>
+                    <span class="px-2 text-secondary"><i class="fa-solid fa-magnifying-glass"></i></span>
+                    <span class="px-2 text-secondary"><i class="fa-solid fa-paperclip"></i></span>
+                    <span class="px-2 text-secondary"><i class="fa-solid fa-ellipsis-vertical"></i></span>
                 </div>
             </div>
         </div>
 
         <div class="row">
-            <div class="col-4 mt-2">
+            <div class="col-4 mt-2 boxList p-0">
                 <div class="d-flex align-items-center boxMessage">
                     <i class="fas fa-bell-slash iconBell"></i>
-                    <div class="d-flex flex-column">
-                        <p>Ricevi notifiche di nuovi messaggi</p>
-                        <p>Attiva notifiche desktop</p>
+                    <div class="d-flex flex-column p-1">
+                        <p class="alertMessage m-0">Ricevi notifiche di nuovi messaggi</p>
+                        <p class="notificOn text-decoration-underline">Attiva notifiche desktop</p>
                     </div>
                 </div>
 
@@ -65,7 +65,7 @@
                 </div>
 
                 <div v-for="(element, i) in contacts" @click="changeChat(i)" :class="counter==i ? 'selectChat' : '' ">
-                    <div class="row d-flex justify-content-between">
+                    <div class="row d-flex justify-content-between p-2">
 
                         <div class="col-auto">
                             <img class="debugImg" :src="element.avatar" alt="">
@@ -73,8 +73,8 @@
 
                         <div class="col-8 cursor-pointer">
                             <div class="d-flex flex-column">
-                                <span> {{element.name}} </span>
-                                <span>Ultimo messaggio inviato</span>
+                                <span class="nameListChat"> {{element.name}} </span>
+                                <span class="lastSending">Ultimo messaggio inviato</span>
                             </div>
                         </div>
 
@@ -92,7 +92,8 @@
                 <div class="backgroundMine mt-2">
                     <div v-for="(element, i) in contacts[counter].messages" :class="element.status=='sent' ? 'message messageSent' : 'message messageReceived'">
                         <div>
-                            <p>{{element.message}}</p>
+                            <h6>{{element.message}}</h6>
+                            <p class="sendingHour">{{element.date}}</p>
                         </div>
                     </div>
                     

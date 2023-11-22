@@ -5,8 +5,13 @@
 }
 
 body {
-    background-color: teal;
+    background: linear-gradient(0deg, rgba(218,219,212,1) 80%, rgba(0,150,136,1) 80%);
+    height: 100vh;
     font-family: sans-serif;
+}
+
+.container {
+    border-radius: 10px;
 }
 
 .debugImg {
@@ -18,10 +23,31 @@ body {
     background-color: #eaeaea;
 }
 
+.boxList {
+    background-color: #ffff;
+}
+
+.nameListChat {
+    font-weight: bold;
+}
+
 .backgroundMine {
     background-image: url(../img/mine.jpg);
-    height: 88%;
+    height: 90%;
     padding: 20px;
+}
+
+.sendingHour {
+    font-size: 10px;
+    text-align: end;
+    margin: 0;
+    color: grey;
+}
+
+.lastSending {
+    font-size: 13px;
+    margin: 0;
+    color: gray;
 }
 
 .iconBell {
@@ -32,9 +58,20 @@ body {
     font-size: 20px;
 }
 
+.alertMessage {
+    font-size: 16px;
+}
+
+.notificOn {
+    margin: 0;
+    font-size: 13px;
+    color: grey;
+}
+
 .boxMessage {
     background-color: #8edafc;
     color: black;
+    padding: 7px;
 }
 
 .message {
