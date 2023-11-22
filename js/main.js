@@ -3,6 +3,7 @@ const { createApp } = Vue
 createApp({
     data() {
         return {
+            newMessage: "",
             counter: 0,
             contacts: [
                 {
@@ -175,6 +176,14 @@ createApp({
         changeChat(i) {
             this.counter=i;
             console.log(this.counter)
+        },
+
+        addMessage() {
+
+            let addText = { message: this.newMessage, status: 'sent'};
+
+            this.contacts[this.counter].messages.push(addText);
+            this.newMessage = ""            
         }
 
     },

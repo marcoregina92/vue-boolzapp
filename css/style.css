@@ -20,7 +20,8 @@ body {
 
 .backgroundMine {
     background-image: url(../img/mine.jpg);
-    height: 87%;
+    height: 88%;
+    padding: 20px;
 }
 
 .iconBell {

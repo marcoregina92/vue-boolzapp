@@ -36,7 +36,7 @@
                     <img class="debugImg" :src="contacts[counter].avatar" alt="">
                     <div class="d-flex flex-column">
                         <span> {{contacts[counter].name}} </span>
-                        <span>Ultimo accesso oggi alle 12:00</span>
+                        <span>Ultimo accesso oggi {{contacts[counter].messages[1].date}} </span>
                     </div>
                 </div>
 
@@ -98,17 +98,17 @@
                     
                 </div>
 
-                <div class="row d-flex justify-content-evenly align-items-center">
+                <div class="row d-flex justify-content-evenly align-items-center p-2">
 
                     <div class="col-auto">
                         <i class="fa-regular fa-face-smile"></i>
                     </div>
 
                     <div class="col-10">
-                        <form class="d-flex" role="search">
-                            <input class="form-control me-2" type="search" placeholder="Scrivi un messaggio"
+                        <!-- <form class="d-flex" role="search"> -->
+                            <input v-model="newMessage" @keyup.enter="addMessage" class="form-control me-2" type="text" placeholder="Scrivi un messaggio"
                                 aria-label="Search">
-                        </form>
+                        <!-- </form> -->
                     </div>
 
                     <div class="col-auto">
