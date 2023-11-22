@@ -53,7 +53,7 @@
                 <div class="d-flex align-items-center boxMessage">
                     <i class="fas fa-bell-slash iconBell"></i>
                     <div class="d-flex flex-column">
-                        <h7>Ricevi notifiche di nuovi messaggi</h7>
+                        <p>Ricevi notifiche di nuovi messaggi</p>
                         <p>Attiva notifiche desktop</p>
                     </div>
                 </div>
@@ -90,10 +90,12 @@
             <div class="col-8">
 
                 <div class="backgroundMine mt-2">
-                    <div class="messageSent">ciao sono un messaggio inviato</div>
-                    <div class="messageSent">ciao sono un messaggio inviato</div>
-                    <div class="">ciao sono un messaggio ricevuto</div>
+                    <div v-for="(element, i) in contacts[0].messages" :class="element.status=='sent' ? 'messageSent' : 'messageReceived'">
+                        <p>{{element.message}}</p>
+                    </div>
+                    
                 </div>
+
                 <div class="row d-flex justify-content-evenly align-items-center">
 
                     <div class="col-auto">
