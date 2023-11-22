@@ -180,10 +180,17 @@ createApp({
 
         addMessage() {
 
-            let addText = { message: this.newMessage, status: 'sent'};
+            let addText = {date:'Adesso', message: this.newMessage, status: 'sent'};
 
             this.contacts[this.counter].messages.push(addText);
-            this.newMessage = ""            
+            this.newMessage = ""
+            
+            setTimeout(this.addAnswer, 1000);
+        },
+
+        addAnswer() {
+            let answer = {date:'Adesso', message:'Ok!', status: 'received'};
+            this.contacts[this.counter].messages.push(answer);
         }
 
     },
