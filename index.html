@@ -64,14 +64,14 @@
                         aria-label="Username" aria-describedby="basic-addon1">
                 </div>
 
-                <div v-for="element in contacts">
+                <div v-for="(element, i) in contacts" @click="changeChat(i)" :class="counter==i ? 'selectChat' : '' ">
                     <div class="row d-flex justify-content-between">
 
                         <div class="col-auto">
                             <img class="debugImg" :src="element.avatar" alt="">
                         </div>
 
-                        <div class="col-auto">
+                        <div class="col-8 cursor-pointer">
                             <div class="d-flex flex-column">
                                 <span> {{element.name}} </span>
                                 <span>Ultimo messaggio inviato</span>
@@ -90,7 +90,7 @@
             <div class="col-8">
 
                 <div class="backgroundMine mt-2">
-                    <div v-for="(element, i) in contacts[0].messages" :class="element.status=='sent' ? 'messageSent' : 'messageReceived'">
+                    <div v-for="(element, i) in contacts[counter].messages" :class="element.status=='sent' ? 'messageSent' : 'messageReceived'">
                         <p>{{element.message}}</p>
                     </div>
                     

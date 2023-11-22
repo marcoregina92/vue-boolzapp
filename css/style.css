@@ -42,5 +42,13 @@ body {
 }
 
 .messageReceived {
-    
+  flex-direction: row;  
+}
+
+.selectChat {
+    background-color: gray;
+}
+
+.cursor-pointer{
+    cursor: pointer;
 }
