@@ -60,11 +60,41 @@
 
                 <div class="input-group p-2">
                     <span class="input-group-text" id="basic-addon1"><i class="fas fa-magnifying-glass"></i></span>
-                    <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat"
+                    <input v-model="searchChat" @input="contactSearch()" type="text" class="form-control" placeholder="Cerca o inizia una nuova chat"
                         aria-label="Username" aria-describedby="basic-addon1">
                 </div>
 
-                <div v-for="(element, i) in contacts" @click="changeChat(i)" :class="counter==i ? 'selectChat' : '' ">
+
+                <div class="">
+                    <template v-for="(element, i) in contacts">
+                        <div v-if="contacts[i].visible" @click="changeChat(i)" :class="counter==i ? 'selectChat' : '' ">
+                            <div class="row d-flex justify-content-between p-2">
+
+                                <div class="col-auto">
+                                    <img class="debugImg" :src="element.avatar" alt="">
+                                </div>
+        
+                                <div class="col-8 cursor-pointer">
+                                    <div class="d-flex flex-column">
+                                        <span class="nameListChat"> {{element.name}} </span>
+                                        <span class="lastSending">Ultimo messaggio inviato</span>
+                                    </div>
+                                </div>
+        
+                                <div class="col-auto lastSending">
+                                    12:00
+                                </div>
+                            </div>
+                        </div>
+
+                    </template>
+                </div>
+
+
+
+
+
+                <!-- <div v-for="(element, i) in contacts" @click="changeChat(i)" :class="counter==i ? 'selectChat' : '' ">
                     <div class="row d-flex justify-content-between p-2">
 
                         <div class="col-auto">
@@ -82,7 +112,7 @@
                             12:00
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
 
 
@@ -90,7 +120,7 @@
             <div class="col-8 p-0">
 
                 <div class="backgroundMine mt-2">
-                    <div v-for="(element, i) in contacts[counter].messages" :class="element.status=='sent' ? 'message messageSent' : 'message messageReceived'">
+                    <div v-for="element in contacts[counter].messages" :class="element.status=='sent' ? 'message messageSent' : 'message messageReceived'">
                         <div>
                             <h6>{{element.message}}</h6>
                             <p class="sendingHour">{{element.date}}</p>
@@ -106,10 +136,8 @@
                     </div>
 
                     <div class="col-10 p-0">
-                        <!-- <form class="d-flex" role="search"> -->
                             <input v-model="newMessage" @keyup.enter="addMessage" class="form-control me-2" type="text" placeholder="Scrivi un messaggio"
                                 aria-label="Search">
-                        <!-- </form> -->
                     </div>
 
                     <div class="col-auto p-0">
