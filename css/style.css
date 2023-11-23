@@ -10,8 +10,8 @@ body {
     font-family: sans-serif;
 }
 
-.container {
-    /* border-radius: 10px; */
+.containerChat {
+   height: 530px;
 }
 
 .debugImg {

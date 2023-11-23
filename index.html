@@ -65,7 +65,7 @@
                 </div>
 
 
-                <div class="">
+                <div class="containerChat">
                     <template v-for="(element, i) in contacts">
                         <div v-if="contacts[i].visible" @click="changeChat(i)" :class="counter==i ? 'selectChat' : '' ">
                             <div class="row d-flex justify-content-between p-2">
