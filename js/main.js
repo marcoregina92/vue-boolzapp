@@ -3,6 +3,7 @@ const { createApp } = Vue
 createApp({
     data() {
         return {
+            searchChat: "",
             newMessage: "",
             counter: 0,
             contacts: [
@@ -176,6 +177,7 @@ createApp({
         changeChat(i) {
             this.counter=i;
             console.log(this.counter)
+            console.log()
         },
 
         addMessage() {
@@ -191,6 +193,16 @@ createApp({
         addAnswer() {
             let answer = {date:'Adesso', message:'Ok!', status: 'received'};
             this.contacts[this.counter].messages.push(answer);
+        },
+
+        contactSearch() {
+            for (let i = 0; i < this.contacts.length; i++) {
+                this.contacts[i].visible = true
+                if (!this.contacts[i].name.toLowerCase().includes(this.searchChat)) {
+                    this.contacts[i].visible=false
+                }
+                console.log(this.contacts[i].visible);
+            }
         }
 
     },
