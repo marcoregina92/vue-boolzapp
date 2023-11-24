@@ -15,6 +15,8 @@
 
 <body>
 
+<!-- Barra superiore utente -->
+
     <div id="app" class="container">
         <div class="row mt-5">
             <div class="col-4 mt-2 d-flex align-items-center justify-content-between">
@@ -30,6 +32,8 @@
                     <span class="px-2 text-secondary"><i class="fa-solid fa-ellipsis-vertical"></i></span>
                 </div>
             </div>
+
+<!-- Barra superiore chat selezionata -->
             <div class="col-8 mt-2 d-flex align-items-center justify-content-between">
 
                 <div class="d-flex align-items-center ">
@@ -48,6 +52,7 @@
             </div>
         </div>
 
+<!-- Barra azzurra notifiche -->
         <div class="row">
             <div class="col-4 mt-2 boxList p-0">
                 <div class="d-flex align-items-center boxMessage">
@@ -58,13 +63,14 @@
                     </div>
                 </div>
 
+<!-- Input per cercare utente -->
                 <div class="input-group p-2">
                     <span class="input-group-text" id="basic-addon1"><i class="fas fa-magnifying-glass"></i></span>
                     <input v-model="searchChat" @input="contactSearch()" type="text" class="form-control" placeholder="Cerca o inizia una nuova chat"
                         aria-label="Username" aria-describedby="basic-addon1">
                 </div>
 
-
+<!-- Lista chat utenti -->
                 <div class="containerChat">
                     <template v-for="(element, i) in contacts">
                         <div v-if="contacts[i].visible" @click="changeChat(i)" :class="counter==i ? 'selectChat' : '' ">
@@ -74,7 +80,7 @@
                                     <img class="debugImg" :src="element.avatar" alt="">
                                 </div>
         
-                                <div class="col-8 cursor-pointer">
+                                <div class="col cursor-pointer">
                                     <div class="d-flex flex-column">
                                         <span class="nameListChat"> {{element.name}} </span>
                                         <span class="lastSending">Ultimo messaggio inviato</span>
@@ -82,41 +88,16 @@
                                 </div>
         
                                 <div class="col-auto lastSending">
-                                    12:00
+                                    {{element.messages[element.messages.length-1].date}} 
                                 </div>
                             </div>
                         </div>
-
                     </template>
                 </div>
-
-
-
-
-
-                <!-- <div v-for="(element, i) in contacts" @click="changeChat(i)" :class="counter==i ? 'selectChat' : '' ">
-                    <div class="row d-flex justify-content-between p-2">
-
-                        <div class="col-auto">
-                            <img class="debugImg" :src="element.avatar" alt="">
-                        </div>
-
-                        <div class="col-8 cursor-pointer">
-                            <div class="d-flex flex-column">
-                                <span class="nameListChat"> {{element.name}} </span>
-                                <span class="lastSending">Ultimo messaggio inviato</span>
-                            </div>
-                        </div>
-
-                        <div class="col-auto lastSending">
-                            12:00
-                        </div>
-                    </div>
-                </div> -->
             </div>
 
 
-
+<!-- Sezione Chat -->
             <div class="col-8 p-0">
 
                 <div class="backgroundMine mt-2">
@@ -129,6 +110,7 @@
                     
                 </div>
 
+ <!-- Input invio messaggio -->
                 <div class="inputMessage row d-flex justify-content-evenly align-items-center p-2">
 
                     <div class="col-auto p-0">

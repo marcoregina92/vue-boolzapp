@@ -174,11 +174,15 @@ createApp({
     },
     methods: {
 
+        // Funzione al click che cambia la chat dinamicamente
+
         changeChat(i) {
             this.counter=i;
             console.log(this.counter)
             console.log()
         },
+
+        // Funzione che aggiunge messaggio in chat quando si scrive
 
         addMessage() {
 
@@ -190,10 +194,14 @@ createApp({
             setTimeout(this.addAnswer, 1000);
         },
 
+        // Funzione che risponde automaticamente quando si invia un msg
+
         addAnswer() {
             let answer = {date:'Adesso', message:'Ok!', status: 'received'};
             this.contacts[this.counter].messages.push(answer);
         },
+
+        // Funzione che filtra i contatti in base alle lettere scritte
 
         contactSearch() {
             for (let i = 0; i < this.contacts.length; i++) {
